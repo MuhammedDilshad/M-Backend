@@ -13,7 +13,7 @@ import CartRouter from "./routes/CartRoute.js";
 import CartClear from "./routes/CartClearRoute.js";
 
 app.use(express.static("public"));
-app.use("images", express.static("images"));
+app.use("/images", express.static("images"));
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
