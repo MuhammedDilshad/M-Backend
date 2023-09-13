@@ -5,7 +5,6 @@ import CartModel from "../Models/CartModel.js";
 const ObjectId = mongoose.Types.ObjectId;
 
 export const CreatePost = async (req, res) => {
-  // console.log(req.body);
   const newPost = new PostModel(req.body);
   try {
     await newPost.save();
@@ -19,7 +18,6 @@ export const GetPost = async (req, res) => {
   const postId = req.params._id;
   try {
     const post = await PostModel.find();
-    // console.log(post);
     res.status(200).json(post);
   } catch (error) {
     res.status(500).json(error);

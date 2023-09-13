@@ -3,7 +3,6 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
-// import morgan from "morgan";
 
 const app = express();
 
@@ -14,7 +13,7 @@ import CartRouter from "./routes/CartRoute.js";
 import CartClear from "./routes/CartClearRoute.js";
 
 app.use(express.static("public"));
-app.use("/images", express.static("images"));
+app.use("images", express.static("images"));
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
@@ -25,7 +24,6 @@ const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log("connected");
 });
-// import { uploadImage, uploadPost } from "../../Api/postRequest";
 
 app.use("/post", postRouter);
 app.use("/cart", CartRouter);

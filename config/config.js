@@ -9,5 +9,4 @@ const connectDB = () => {
     console.log("db not connecting");
   }
 };
-// process.env.MONGODB
 export default connectDB;
