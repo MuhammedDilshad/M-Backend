@@ -12,6 +12,8 @@ import postRouter from "./routes/PostRoute.js";
 import UploadRoute from "./routes/UploadRoute.js";
 import CartRouter from "./routes/CartRoute.js";
 import CartClear from "./routes/CartClearRoute.js";
+app.use(morgan("dev"));
+
 
 app.use(express.static("public"));
 app.use("/images", express.static("images"));
